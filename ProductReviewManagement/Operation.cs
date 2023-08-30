@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace ProductReviewManagement
 {
     internal class Operation
     {
         public static Random rnd = new Random();
+        DataTable table = new DataTable("Products");    
         public void Display(List<Product> list)
         {
             foreach (var item in list)
@@ -20,7 +22,7 @@ namespace ProductReviewManagement
             {
                 Product product = new Product()
                 {
-                    ProductId = i,
+                    ProductId = rnd.Next(8),
                     User = i,
                     Rating = rnd.Next(6),
                     Review = GoodOrBad(),
@@ -80,6 +82,23 @@ namespace ProductReviewManagement
             foreach (var item in result)
             {
                 Console.WriteLine(item.ProductId+" | "+item.Review);
+            }
+        }
+
+        internal void AddDataToDataTable(List<Product> list)
+        {
+            table.Columns.Add("ProductId", typeof(int));
+            table.Columns.Add("User",typeof(int));
+            table.Columns.Add("Rating",typeof(int));
+            table.Columns.Add("Review",typeof(string));
+            table.Columns.Add("IsLike",typeof(bool));
+            foreach (var item in list)
+            {
+                table.Rows.Add(item.ProductId, item.User,item.Rating,item.Review,item.IsLike); 
+            }
+            foreach (var item in table.AsEnumerable())
+            {
+                Console.WriteLine(item.Field<int>("ProductId") + " | " + item.Field<int>("User") + " | " + item.Field<int>("Rating") + " | " + item.Field<string>("Review") + " | " + item.Field<bool>("IsLike"));
             }
         }
     }

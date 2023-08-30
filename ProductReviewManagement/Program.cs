@@ -9,9 +9,11 @@
             //operation.Display(products);
             //operation.RetrieveTopRecords(products);
             //operation.RetrieveAllRecordsWithCondition(products);
-            operation.RetrieveReviewCount(products);
-            operation.SkipTopRecords(products);
-            operation.RetrieveProductIdAndReview(products);
+            //operation.RetrieveReviewCount(products);
+            //operation.SkipTopRecords(products);
+            //operation.RetrieveProductIdAndReview(products);
+            operation.AddDataToDataTable(products);
+
 
         }
     }
