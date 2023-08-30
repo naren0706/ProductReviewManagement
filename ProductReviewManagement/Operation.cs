@@ -70,7 +70,17 @@ namespace ProductReviewManagement
 
         internal void SkipTopRecords(List<Product> list)
         {
-            var result = list.Skip(5);
+            var result = list.Skip(5).ToList();
+            Display(result);
+        }
+
+        internal void RetrieveProductIdAndReview(List<Product> list)
+        {
+            var result = list.Select(x => new { ProductId = x.ProductId, Review = x.Review });
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.ProductId+" | "+item.Review);
+            }
         }
     }
 }

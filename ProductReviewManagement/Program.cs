@@ -11,6 +11,8 @@
             //operation.RetrieveAllRecordsWithCondition(products);
             operation.RetrieveReviewCount(products);
             operation.SkipTopRecords(products);
-        }       
+            operation.RetrieveProductIdAndReview(products);
+
+        }
     }
 }
