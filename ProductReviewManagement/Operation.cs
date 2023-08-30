@@ -36,7 +36,6 @@ namespace ProductReviewManagement
         {
             return rnd.Next(2) == 1;
         }
-
         private string GoodOrBad()
         {
             if (TORF())
@@ -69,13 +68,11 @@ namespace ProductReviewManagement
                 Console.WriteLine(data.ProductID + "   " + data.Count);
             }
         }
-
         internal void SkipTopRecords(List<Product> list)
         {
             var result = list.Skip(5).ToList();
             Display(result);
         }
-
         internal void RetrieveProductIdAndReview(List<Product> list)
         {
             var result = list.Select(x => new { ProductId = x.ProductId, Review = x.Review });
@@ -99,6 +96,18 @@ namespace ProductReviewManagement
             foreach (var item in table.AsEnumerable())
             {
                 Console.WriteLine(item.Field<int>("ProductId") + " | " + item.Field<int>("User") + " | " + item.Field<int>("Rating") + " | " + item.Field<string>("Review") + " | " + item.Field<bool>("IsLike"));
+            }
+        }
+
+        internal void GetTrueIsLike()
+        {
+            Console.WriteLine("All true is like values");
+            foreach (var item in table.AsEnumerable())
+            {
+                if (item.Field<bool>("IsLike"))
+                {
+                    Console.WriteLine(item.Field<int>("ProductId") + " | " + item.Field<int>("User") + " | " + item.Field<int>("Rating") + " | " + item.Field<string>("Review") + " | " + item.Field<bool>("IsLike"));
+                }
             }
         }
     }

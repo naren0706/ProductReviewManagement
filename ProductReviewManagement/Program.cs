@@ -13,6 +13,7 @@
             //operation.SkipTopRecords(products);
             //operation.RetrieveProductIdAndReview(products);
             operation.AddDataToDataTable(products);
+            operation.GetTrueIsLike();
 
 
         }
