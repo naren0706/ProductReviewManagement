@@ -47,5 +47,10 @@ namespace ProductReviewManagement
             }
         }
 
+        internal void RetrieveTopRecords(List<Product> list)
+        {
+            var result = list.Where(x=>x.Rating==5).ToList();
+            Display(result);
+        }
     }
 }

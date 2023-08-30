@@ -2,7 +2,6 @@
 {
     internal class Product
     {
-
         public int ProductId { get; set; }
         public int User { get; set; }
         public int Rating { get; set; }
