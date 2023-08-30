@@ -8,6 +8,7 @@
             List<Product> products = operation.AddValuesToList();
             //operation.Display(products);
             operation.RetrieveTopRecords(products);
+            operation.RetrieveAllRecordsWithCondition(products);
         }       
     }
 }

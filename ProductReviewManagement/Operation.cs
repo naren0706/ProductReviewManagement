@@ -52,5 +52,11 @@ namespace ProductReviewManagement
             var result = list.Where(x=>x.Rating==5).ToList();
             Display(result);
         }
+
+        internal void RetrieveAllRecordsWithCondition(List<Product> list)
+        {
+            var result = list.Where(x => x.Rating>3 && (x.ProductId==1 || x.ProductId==4 || x.ProductId==9)).ToList();
+            Display(result);
+        }
     }
 }
