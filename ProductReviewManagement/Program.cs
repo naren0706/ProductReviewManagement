@@ -10,6 +10,7 @@
             //operation.RetrieveTopRecords(products);
             //operation.RetrieveAllRecordsWithCondition(products);
             operation.RetrieveReviewCount(products);
+            operation.SkipTopRecords(products);
         }       
     }
 }

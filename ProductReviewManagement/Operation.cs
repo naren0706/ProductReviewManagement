@@ -67,5 +67,10 @@ namespace ProductReviewManagement
                 Console.WriteLine(data.ProductID + "   " + data.Count);
             }
         }
+
+        internal void SkipTopRecords(List<Product> list)
+        {
+            var result = list.Skip(5);
+        }
     }
 }
