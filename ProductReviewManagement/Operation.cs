@@ -99,9 +99,10 @@ namespace ProductReviewManagement
             }
         }
 
-        internal void GetTrueIsLike()
+        internal void AverageRating()
         {
             Console.WriteLine("All true is like values");
+            var result = table.AsEnumerable().Where(x => x.Field<bool>("IsLike").Equals(true)).ToList();
             foreach (var item in table.AsEnumerable())
             {
                 if (item.Field<bool>("IsLike"))
@@ -109,6 +110,7 @@ namespace ProductReviewManagement
                     Console.WriteLine(item.Field<int>("ProductId") + " | " + item.Field<int>("User") + " | " + item.Field<int>("Rating") + " | " + item.Field<string>("Review") + " | " + item.Field<bool>("IsLike"));
                 }
             }
+
         }
     }
 }

@@ -12,8 +12,9 @@
             //operation.RetrieveReviewCount(products);
             //operation.SkipTopRecords(products);
             //operation.RetrieveProductIdAndReview(products);
-            operation.AddDataToDataTable(products);
-            operation.GetTrueIsLike();
+            //operation.AddDataToDataTable(products);
+            //operation.GetTrueIsLike();
+            operation.AverageRating();
 
 
         }
