@@ -99,18 +99,16 @@ namespace ProductReviewManagement
             }
         }
 
-        internal void AverageRating()
-        {
-            Console.WriteLine("All true is like values");
-            var result = table.AsEnumerable().Where(x => x.Field<bool>("IsLike").Equals(true)).ToList();
-            foreach (var item in table.AsEnumerable())
-            {
-                if (item.Field<bool>("IsLike"))
-                {
-                    Console.WriteLine(item.Field<int>("ProductId") + " | " + item.Field<int>("User") + " | " + item.Field<int>("Rating") + " | " + item.Field<string>("Review") + " | " + item.Field<bool>("IsLike"));
-                }
-            }
+        internal void AverageRating(List<Product> list)
+        {            
+            var result = list.Average(x => x.Rating);
+            Console.WriteLine(result);
+        }
 
+        internal void GetNiceReview(List<Product> list)
+        {
+            var result = list.Where(x=>x.Review.Equals("nice")).ToList();
+            Display(result);
         }
     }
 }

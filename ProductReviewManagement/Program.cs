@@ -14,7 +14,8 @@
             //operation.RetrieveProductIdAndReview(products);
             //operation.AddDataToDataTable(products);
             //operation.GetTrueIsLike();
-            operation.AverageRating();
+            operation.AverageRating(products);
+            operation.GetNiceReview(products);
 
 
         }
