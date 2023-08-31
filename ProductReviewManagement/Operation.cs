@@ -105,9 +105,9 @@ namespace ProductReviewManagement
             Console.WriteLine(result);
         }
 
-        internal void GetNiceReview(List<Product> list)
+        internal void AddAndReterive(List<Product> list)
         {
-            var result = list.Where(x=>x.Review.Equals("nice")).ToList();
+            var result = list.Where(x=>x.User.Equals(10)).OrderBy(x=>x.Rating).ToList();
             Display(result);
         }
     }
